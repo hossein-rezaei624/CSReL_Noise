@@ -8,8 +8,6 @@ import utils
 from continual_learning import continual_runner
 from dataset import idataset
 
-from datetime import datetime
-
 
 def make_selection_params(opts):
     selection_params = {
@@ -45,9 +43,6 @@ def make_selection_params(opts):
 
 
 def main(opts):
-
-    start_hossein = datetime.now()
-    
     if not os.path.exists(opts.local_path):
         os.makedirs(opts.local_path)
     # make data loaders
@@ -113,10 +108,6 @@ def main(opts):
         else:
             raise ValueError('Invalid runner type')
         runner.next_task(dump_buffer=True)
-
-
-    end_hossein = datetime.now()
-    print(f"Elapsed time: {end_hossein - start_hossein}")
 
 
 if __name__ == '__main__':
