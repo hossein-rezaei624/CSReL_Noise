@@ -1,6 +1,6 @@
 export CUBLAS_WORKSPACE_CONFIG=:4096:8
 
-local_path='./results/split_cifar100/test14'  # set your output path
+local_path='./results/split_cifar100/test20'  # set your output path
 dataset='splitcifar100'
 setting='der'
 data_path=''
@@ -13,7 +13,7 @@ batch_size=32
 mem_batch_size=32
 use_cuda=1
 opt_type='sgd'
-seed=4
+seed=0
 slt_wo_aug=0
 holdout_set='sub'
 replay_mode='sub'
@@ -30,7 +30,7 @@ aug_type='der'
 ref_train_lr=3e-3
 cur_train_lr=5e-3
 ref_sample_per_task=200
-noise_rate=0.1
+noise_rate=0.2
 
 
 python3 -u offline_continual_learning.py --local_path=$local_path \
