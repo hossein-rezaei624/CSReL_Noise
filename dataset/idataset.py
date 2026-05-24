@@ -309,7 +309,7 @@ class SplitCifar100(object):
                 self.train_dataset,
                 noise_rate=label_noise,
                 n_classes_total=100,
-                n_classes_per_task=5,
+                n_classes_per_task=2,
                 within_task=True,
                 seed=seed,
             )
@@ -357,8 +357,8 @@ class SplitCifar100(object):
             return train_ind, full_train_id, test_ind
 
     def make_task_dic(self):
-        tasks = 20
-        cls_per_task = 5
+        tasks = 50
+        cls_per_task = 2
         cur_class = 0
         for i in range(tasks):
             self.task_dic[i] = []
